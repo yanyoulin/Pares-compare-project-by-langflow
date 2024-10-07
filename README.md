@@ -66,7 +66,62 @@ result:<br>
 我們又更進一步了，得出的結果更精準了，但未來還可以作改進。<br>
 ## 使用爬蟲?
 能不能不用手動下載論文，未來這題目的方向會試圖解決爬蟲下載論文的問題。<br>
+參考資料(NLP - 用Selenium爬蟲『博碩士論文加值系統』):https://hackmd.io/@bessyhuang/H1dgAM3OI#%E7%88%AC%E8%9F%B2%E7%A8%8B%E5%BC%8F%E7%A2%BC%E6%99%BA%E8%83%BD%E7%89%88---%E8%AD%BD%E9%8C%9A <br>
+實作(用於custom component):<br>
+```python
+# from langflow.field_typing import Data
+from langflow.custom import Component
+from langflow.io import MessageTextInput, Output
+from langflow.schema import Data
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 
+class CustomComponent(Component):
+    display_name = "Custom Component"
+    description = "Use as a template to create your own component."
+    documentation: str = "http://docs.langflow.org/components/custom"
+    icon = "custom_components"
+    name = "CustomComponent"
+
+    inputs = [
+        MessageTextInput(name="input_value", display_name="Input Value", value="Hello, World!"),
+    ]
+
+    outputs = [
+        Output(display_name="Output", name="output", method="build_output"),
+    ]
+
+    def build_output(self) -> Data:
+        browser = webdriver.Firefox()
+        browser.get('https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dwebmge')
+
+        browser.find_element(By.ID,"ysearchinput0").send_keys(self.input_value)
+
+        browser.find_element(By.ID, "gs32search").click()
+        driver_wait = WebDriverWait(browser, 20, 0.5)
+
+        html = browser.page_source
+
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        data = Data(value=soup.text)
+        self.status = data
+        return data
+```
+可能架構(未完成):<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/project_may1.png) <br>
+input:<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_input.png)<br>
+part of custom component output:<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_component_text.png) <br>
+output website:<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_website.png)<br>
+但這樣仍沒處理下載論文的問題，之後須在研究。<br>
+## 10/8問題
+1. 在version1中，我可能有什麼方法讓model同時輸出pdf的位置、標題及文章所有內容，且文章不只一個
+2. 我可能有什麼方法在langflow這個應用中不用手動去網站找論文下載而是透過使用API或者爬蟲方式將論文下載下來，這樣不只省時且可以不占空間
 
 
 
