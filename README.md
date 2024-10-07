@@ -16,6 +16,6 @@ Vector Stores的用途是儲存和檢索由文本或其他資料產生的向量�
 6. Vector DB會根據相似性返回最相關的結果，這些結果就是符合用戶查詢主題的文章。
 <br>
 然後我們將Astra DB回傳的data用parse data轉成text，接上prompt，使它成為聊天機器人可用的店家資訊，回答使用者的問題。<br>
-參考連結:https://www.youtube.com/watch?v=rz40ukZ3krQ
+參考連結:https://www.youtube.com/watch?v=rz40ukZ3krQ <br>
 ## 開始實作-論文答覆機器人version1
 架構想法:``input``-``兩個prompt分別處理 1.使用者想找的論文 2.使用者想針對這些論文作的動作``-``將論文存進Astra DB``-``將資料傳給prompt 讓機器人去分析那些文章是使用者要的``-``機器人執行第二個prompt提出的動作ex.compare``
