@@ -21,5 +21,22 @@ Vector Stores的用途是儲存和檢索由文本或其他資料產生的向量�
 ## 開始實作-論文答覆機器人version1
 架構想法:`input`-`兩個prompt分別處理 1.使用者想找的論文 2.使用者想針對這些論文作的動作`-`將論文存進Astra DB`-`將資料傳給prompt 讓機器人去分析那些文章是使用者要的`-`機器人執行第二個prompt提出的動作ex.compare`
 ![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/project_ver1.png)
+我遇到的問題: <br>
+### 一個詳細且考慮所有狀況的prompt? 還是input與prompt互相配合?
+原先，我很直覺的想讓OpenAI的model直接從使用者的一串句子中判斷並提取出使用者可能要的論文關鍵字以及想執行的動作，在prompt中加入few-shot learning的方法，以為這樣就能解決。<br>
+原本的prompt:<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/poor_prompt.png)
+原本的input:<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/poor_input.png)
+原本的output:<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/poor_output.png)
+
+
+
+
+
+
+
+
 
 
