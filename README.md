@@ -57,8 +57,15 @@ OpenAI model輸出結果:<br>
 ![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/ver1_chatgptaboutpdf_output.png) <br>
 
 結果似乎還不是我想要的，我預期是它能告訴我是哪個論文以及提取整個論文出來並準備接收使用者想對論文們做的動作(version1中尚未實作)。<br>
-
-
+我們試圖在parse data template加入{file_path}試試?<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/ver1.5_parsedata_prompt.png)<br>
+new prompt:<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/ver1.5_prompt.png)<br>
+result:<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/ver1.5_chatgptaboutpdf.png)<br>
+我們又更進一步了，得出的結果更精準了，但未來還可以作改進。<br>
+## 使用爬蟲?
+能不能不用手動下載論文，未來這題目的方向會試圖解決爬蟲下載論文的問題。<br>
 
 
 
