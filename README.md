@@ -119,6 +119,12 @@ part of custom component output:<br>
 output website:<br>
 ![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_website.png)<br>
 但這樣仍沒處理下載論文的問題，之後須再研究。<br>
+## 未來方向
+1. 研究agent的使用，使解析input更加準確
+2. 研究如何將論文爬下來而不是手動下載
+3. 找到優化vector DB分析資料的方法
+4. 如何從vector DB將論文一整篇截取下來
+5. 更好的架構
 ## 10/8問題
 1. 在version1中，我可能有什麼方法讓model同時輸出pdf的位置、標題及文章所有內容，且文章不只一個
 2. 我可能有什麼方法在langflow這個應用中不用手動去網站找論文下載而是透過使用API或者爬蟲方式將論文下載下來，這樣不只省時且可以不占空間
