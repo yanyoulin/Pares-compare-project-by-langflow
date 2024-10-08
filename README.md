@@ -118,7 +118,7 @@ part of custom component output:<br>
 ![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_component_text.png) <br>
 output website:<br>
 ![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_website.png)<br>
-但這樣仍沒處理下載論文的問題，之後須在研究。<br>
+但這樣仍沒處理下載論文的問題，之後須再研究。<br>
 ## 10/8問題
 1. 在version1中，我可能有什麼方法讓model同時輸出pdf的位置、標題及文章所有內容，且文章不只一個
 2. 我可能有什麼方法在langflow這個應用中不用手動去網站找論文下載而是透過使用API或者爬蟲方式將論文下載下來，這樣不只省時且可以不占空間
