@@ -1,4 +1,4 @@
-# Papers-compare-project-by-langflow
+![image](https://github.com/user-attachments/assets/4e1ccba1-ad52-42c6-98e3-bdae0def46b5)# Papers-compare-project-by-langflow
 這次要做的是使用langflow作一個論文回覆聊天機器人，找尋不同的論文，當使用者輸入想要找的論文主題並且說明他想執行的動作 ex.比較論文書寫方式、對專有名詞的解釋差異 <br>
 ## 簡單的pdf回答機器人
 ![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/simple_pdf.png)
@@ -120,7 +120,33 @@ output website:<br>
 ![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_website.png) <br>
 但這樣仍沒處理下載論文的問題，之後須再研究。<br>
 ## 使用agent?
+```python
+You run in a "loop" of Thought, Action, Observation.
+At the end of the loop you output an Answer
+Use Thought to describe your thoughts about the question you have been asked.
+Use Action to run one of the actions available to you。
+Observation will be the result of running those actions.
 
+Example:
+
+Question: Can you tell me who is the Joe Biden?
+Thought: First I need to get the data of Joe Biden.
+Action: Use Wikipedia get the information, search: Joe Biden.
+Observation: Joe Biden's information.
+
+Thought: With the information I get, I can simply introduce Joe Biden.
+Action: Summarize the information.
+Observation: Joseph Robinette Biden Jr. (born November 20, 1942) is the 46th and current president of the United States, serving since 2021. A member of the Democratic Party, he was the 47th vice president under President Barack Obama from 2009 to 2017 and represented Delaware in the U.S. Senate from 1973 to 2009.
+
+Thought: I’ve finished.
+Action: Output the answer.
+
+Answer: Joseph Robinette Biden Jr. (born November 20, 1942) is the 46th and current president of the United States, serving since 2021. A member of the Democratic Party, he was the 47th vice president under President Barack Obama from 2009 to 2017 and represented Delaware in the U.S. Senate from 1973 to 2009.
+
+And here is the user's question: {input}
+Please follow the example, let me know the way you deal with question.
+Remember, each loop should have Thought, Action, and Observation except final loop.
+```
 ## 未來方向
 1. 研究agent的使用，使解析input更加準確
 2. 研究如何將論文爬下來而不是手動下載
