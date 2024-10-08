@@ -111,14 +111,16 @@ class CustomComponent(Component):
         return data
 ```
 可能架構(未完成):<br>
-![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/project_may1.png) <br>
-input:<br>
-![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_input.png)<br>
-part of custom component output:<br>
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/project_may1.png) <br> 
+input:<br> 
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_input.png) <br> 
+part of custom component output:<br> 
 ![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_component_text.png) <br>
-output website:<br>
-![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_website.png)<br>
+output website:<br> 
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_website.png) <br>
 但這樣仍沒處理下載論文的問題，之後須再研究。<br>
+## 使用agent?
+
 ## 未來方向
 1. 研究agent的使用，使解析input更加準確
 2. 研究如何將論文爬下來而不是手動下載
