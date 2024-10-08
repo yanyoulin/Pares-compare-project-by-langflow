@@ -120,6 +120,9 @@ output website:<br>
 ![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/may1_website.png) <br>
 但這樣仍沒處理下載論文的問題，之後須再研究。<br>
 ## 使用agent?
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/agent_first_test.png) <br> 
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/ReAct.png) <br> 
+prompt: <br>
 ```python
 You run in a "loop" of Thought, Action, Observation.
 At the end of the loop you output an Answer
@@ -147,6 +150,10 @@ And here is the user's question: {input}
 Please follow the example, let me know the way you deal with question.
 Remember, each loop should have Thought, Action, and Observation except final loop.
 ```
+```python
+Which singer won the Record of the Year in 66th Annual Grammy Awards?
+```
+![image](https://github.com/yanyoulin/papers-compare-project-by-langflow/blob/main/langflow_project_pics/agent_try.png) <br> 
 ## 未來方向
 1. 研究agent的使用，使解析input更加準確
 2. 研究如何將論文爬下來而不是手動下載
